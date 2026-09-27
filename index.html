@@ -105,7 +105,6 @@ body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(r
 .product-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:900px;margin:0 auto}
 @media (min-width:640px){.product-grid{grid-template-columns:repeat(3,1fr);gap:16px}}
 @media (min-width:1024px){.product-grid{grid-template-columns:repeat(4,1fr);gap:18px;max-width:1400px}}
-
 .product-card{background:linear-gradient(145deg,#14141c,#0f0f17);border:1px solid var(--border-color);border-radius:14px;padding:12px;transition:var(--transition-base);position:relative;overflow:hidden;animation:cardFadeIn .4s;display:flex;flex-direction:column}
 @keyframes cardFadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 .product-card:hover{border-color:var(--border-hover);transform:translateY(-4px);box-shadow:0 15px 40px rgba(255,59,107,.25)}
@@ -496,9 +495,9 @@ footer a:hover{color:var(--accent-primary)}
   </div>
 </div>
 
-<a href="https://t.me/PremStoreSupport" target="_blank" class="tg-float">
+<a href="https://t.me/cvvvvv69" target="_blank" class="tg-float">
   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>
-  @PremStoreSupport
+  @cvvvvv69
 </a>
 
 <div class="toast-container" id="toastContainer"></div>
@@ -513,13 +512,13 @@ footer a:hover{color:var(--accent-primary)}
 const CONFIG = {
   CREATOR_EMAIL: 'premshop743@gmail.com',
   CREATOR_PASSWORD: 'PremStore2024!',
-  TELEGRAM_SUPPORT: 'https://t.me/PremStoreSupport',
+  TELEGRAM_SUPPORT: 'https://t.me/cvvvvv69',
   STORAGE_KEYS: { PRODUCTS: 'cvvv_products', USERS: 'cvvv_users', CURRENT_USER: 'cvvv_current_user', CART: 'cvvv_cart' },
   PRODUCTS_JSON_URL: 'https://raw.githubusercontent.com/realpremshop/PremShop/main/products.json',
   GITHUB_OWNER: 'realpremshop',
   GITHUB_REPO: 'PremShop',
   GITHUB_FILE: 'products.json',
-  GITHUB_TOKEN: '' // ← ⚠️ აქ ჩასვი შენი GitHub Token (ghp_xxxx)
+  GITHUB_TOKEN: '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'
 };
 
 const state = { products: [], users: [], currentUser: null, cart: [], pendingUser: null, verificationCode: null, editingProductId: null, searchQuery: '', categoryFilter: '' };
@@ -1132,6 +1131,22 @@ async function initApp() {
 if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initApp);
 else initApp();
 setTimeout(() => { renderProducts(); renderNavigation(); }, 1500);
+
+// 🔄 AUTO-REFRESH — ყოველ 10 წამში ავტომატურად იტვირთება
+let lastProductsHash = JSON.stringify(state.products);
+setInterval(async () => {
+  if (state.currentUser && state.currentUser.email === CONFIG.CREATOR_EMAIL) return;
+  try {
+    await loadProductsFromJSON();
+    const newHash = JSON.stringify(state.products);
+    if (newHash !== lastProductsHash) {
+      lastProductsHash = newHash;
+      renderProducts();
+      renderRecentPurchases();
+      console.log('🔄 Products auto-refreshed!');
+    }
+  } catch (e) { console.warn('Auto-refresh error:', e); }
+}, 10000);
 </script>
 </body>
 </html>
