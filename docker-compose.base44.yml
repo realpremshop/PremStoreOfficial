@@ -1,8 +1,8 @@
-# Base44 sandbox runbook for Cvvv Store.
+# Base44 sandbox runbook for LuksShop.
 #
-# The whole app is one static file (`index.html`) — no build step, no backend, no database.
-# It is served from the cloned source by a plain static dev server, so edits to index.html
-# are picked up on the next page load (no rebuild).
+# A static, no-build storefront (`index.html` + `assets/`) — no backend, no database.
+# It is served from the cloned source by a plain static server, so edits to the HTML/CSS/JS
+# are picked up on the next page load (no rebuild, but no hot reload either).
 services:
   web:
     image: python:3.12-slim
@@ -14,7 +14,7 @@ services:
     volumes:
       - .:/app
     labels:
-      base44.project: "Cvvv Store"
+      base44.project: "LuksShop"
       base44.kind: "web"
       base44.port: "3000"
     restart: on-failure
@@ -24,7 +24,7 @@ services:
           "CMD",
           "python",
           "-c",
-          "import urllib.request,sys; r=urllib.request.urlopen('http://127.0.0.1:3000/', timeout=3); sys.exit(0 if b'Cvvv Store' in r.read(4096) else 1)",
+          "import urllib.request,sys; r=urllib.request.urlopen('http://127.0.0.1:3000/', timeout=3); sys.exit(0 if b'LuksShop' in r.read(4096) else 1)",
         ]
       interval: 10s
       timeout: 5s
