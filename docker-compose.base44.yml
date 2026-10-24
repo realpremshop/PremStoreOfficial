@@ -1,0 +1,45 @@
+# Base44 sandbox runbook for Cvvv Store (PremStoreOfficial).
+#
+# A static, no-build storefront: the whole app is a single `index.html`
+# (inline CSS + inline JS, no bundler, no backend, no database).
+# It is served straight from the cloned source by a plain static server, so
+# edits to index.html show up on the next page load (no rebuild, no hot reload
+# -- use the preview refresh after editing).
+services:
+  web:
+    image: python:3.12-slim
+    working_dir: /app
+    # Static dev server over the bind-mounted source. Nothing is baked into an image.
+    # no-cache so the preview never serves a stale copy of index.html.
+    command:
+      [
+        "python",
+        "-m",
+        "http.server",
+        "3000",
+        "--bind",
+        "0.0.0.0",
+        "--directory",
+        "/app",
+      ]
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    labels:
+      base44.project: "Cvvv Store"
+      base44.kind: "web"
+      base44.port: "3000"
+    restart: on-failure
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "python",
+          "-c",
+          "import urllib.request,sys; r=urllib.request.urlopen('http://127.0.0.1:3000/', timeout=3); sys.exit(0 if b'Cvvv Store' in r.read(8192) else 1)",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 5s
