@@ -74,7 +74,7 @@ const Views = {
       '<p class="lead">ნებისმიერი ორიგინალი პროდუქტი — ჩამოგვაქვს შეკვეთით</p>' +
       '<div class="hero-cta">' +
         '<a class="btn btn-primary btn-lg" href="#/catalog">კატალოგის ნახვა →</a>' +
-        '<a class="btn btn-ghost btn-lg" href="https://www.instagram.com/luksshop" target="_blank" rel="noopener">📷 გამოგვყევი Instagram-ზე</a>' +
+        '<a class="btn btn-ghost btn-lg" href="https://www.tiktok.com/@luksshop_official" target="_blank" rel="noopener">🎵 შესაკვეთად მოგვწერე TikTok-ზე</a>' +
       '</div>' +
       '<div class="float-cards">' +
         '<div class="card float-card"><span class="fc-ico">📱</span><span><strong>ტექნიკა და გაჯეტები</strong><span>ორიგინალი პროდუქტები</span></span></div>' +
@@ -330,7 +330,7 @@ const Views = {
           '<div class="field" style="margin-bottom:12px"><input class="input" id="statusCode" placeholder="LUKS-XXXXXX" value="' + esc(code) + '" aria-label="შეკვეთის კოდი"></div>' +
           '<button class="btn btn-primary btn-block" type="submit">სტატუსის შემოწმება</button>' +
         '</form>' +
-        '<p class="muted" style="font-size:12px;margin-top:14px">შეკვეთები ინახება იმ მოწყობილობაზე, საიდანაც გაფორმდა. დახმარებისთვის მოგვწერე Instagram-ზე.</p>' +
+        '<p class="muted" style="font-size:12px;margin-top:14px">შეკვეთები ინახება იმ მოწყობილობაზე, საიდანაც გაფორმდა. დახმარებისთვის მოგვწერე TikTok-ზე (@luksshop_official).</p>' +
       '</div>' +
     '</div>';
   },
@@ -340,14 +340,14 @@ const Views = {
       { q: 'როგორ ხდება მიწოდება?', a: 'კურიერით მთელი საქართველოს მასშტაბით, 1–3 სამუშაო დღეში. ' + money(FREE_DELIVERY_FROM) + '-ზე მეტი შეკვეთა — უფასო მიწოდება.' },
       { q: 'როგორ ვიხდი?', a: 'ნაღდი ანგარიშსწორება კურიერთან ან საბანკო გადარიცხვა შეკვეთის დადასტურების შემდეგ.' },
       { q: 'პროდუქტი ორიგინალია?', a: 'დიახ, ვმუშაობთ მხოლოდ სანდო მომწოდებლებთან და ვიძლევით 12 თვის გარანტიას.' },
-      { q: 'შემიძლია შეკვეთის გაუქმება?', a: 'დიახ, სანამ შეკვეთა გზაში გავა — მოგვწერე Instagram-ზე ან დაგვირეკე.' }
+      { q: 'შემიძლია შეკვეთის გაუქმება?', a: 'დიახ, სანამ შეკვეთა გზაში გავა — მოგვწერე TikTok-ზე (@luksshop_official) ან დაგვირეკე.' }
     ];
     return '<div class="wrap" style="padding:36px 0">' +
       '<div class="section-head" style="margin-bottom:22px"><div><p class="eyebrow">კონტაქტი</p>' +
       '<h1 class="h1">დაგვიკავშირდი</h1>' +
       '<p class="sub" style="margin-top:10px">გაქვს შეკითხვა პროდუქტზე ან შეკვეთაზე? ჩვენ ვპასუხობთ ყოველდღე.</p></div></div>' +
       '<div class="contact-grid">' +
-        '<a class="card feature" href="https://www.instagram.com/luksshop" target="_blank" rel="noopener"><span class="fc-ico">📷</span><h3>Instagram</h3><p>@luksshop — პირველი პასუხი</p></a>' +
+        '<a class="card feature" href="https://www.tiktok.com/@luksshop_official" target="_blank" rel="noopener"><span class="fc-ico">🎵</span><h3>TikTok</h3><p>@luksshop_official — შესაკვეთად მოგვწერე</p></a>' +
         '<a class="card feature" href="tel:+995555000000"><span class="fc-ico">📞</span><h3>ტელეფონი</h3><p>+995 555 00 00 00</p></a>' +
         '<a class="card feature" href="mailto:info@luksshop.ge"><span class="fc-ico">✉️</span><h3>ელფოსტა</h3><p>info@luksshop.ge</p></a>' +
         '<div class="card feature"><span class="fc-ico">🕘</span><h3>სამუშაო საათები</h3><p>ორშ–შაბ 10:00–20:00</p></div>' +

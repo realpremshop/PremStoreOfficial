@@ -34,8 +34,9 @@ A path that matches no route renders the not-found view.
   is no admin surface.
 - **Accounts are device-local** and passwords are stored in plain text in `localStorage`. This is
   demo-grade only; put authentication on a server before real use.
-- **Contact details and the Instagram handle are placeholders** (`@luksshop`, `+995 555 00 00 00`,
-  `info@luksshop.ge`, footer links) — replace with the real ones.
+- **Contact details and the TikTok handle are placeholders** (`@luksshop_official`,
+  `+995 555 00 00 00`, `info@luksshop.ge`, footer links) — replace with the real ones.
+  Ordering is handled by direct messages on TikTok; there is no checkout backend.
 - **The chat widget is a rule-based helper** (keyword matching over the catalog), not an LLM call.
 
 ## How to verify it works

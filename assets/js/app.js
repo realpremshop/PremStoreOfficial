@@ -255,7 +255,7 @@ function chatAnswer(text) {
     return 'ყველა პროდუქტი ორიგინალია და მოყვება 12 თვის გარანტია.';
   }
   if (/კონტაქტ|ტელეფონ|ელფოსტ|მისამართ/.test(t)) {
-    return 'დაგვიკავშირდი: Instagram @luksshop, ტელეფონი +995 555 00 00 00, ელფოსტა info@luksshop.ge.';
+    return 'შესაკვეთად მოგვწერე TikTok-ზე @luksshop_official, ტელეფონი +995 555 00 00 00, ელფოსტა info@luksshop.ge.';
   }
   if (/კატეგორ|კატალოგ|რა გაქვთ|პროდუქტ/.test(t)) {
     return 'კატეგორიები: ' + CATEGORIES.map(c => c.emoji + ' ' + c.name).join(', ') + '. სრული სია — #/catalog.';
