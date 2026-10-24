@@ -167,7 +167,7 @@ const Views = {
             '<button class="btn btn-ghost btn-lg" data-action="buy-now" data-id="' + p.id + '">სწრაფი შეკვეთა</button>' +
           '</div>' +
           '<div class="meta-list">' +
-            '<div class="card meta-item">🚚 <span><b>მიწოდება:</b> მთელ საქართველოში, 1–3 სამუშაო დღე. ' + money(FREE_DELIVERY_FROM) + '-ზე მეტი შეკვეთა — უფასო.</span></div>' +
+            '<div class="card meta-item">🚚 <span><b>მიწოდება:</b> მიტანა ნებისმიერ მეტროსთან — შეკვეთიდან 1–2 კვირაში. ' + money(FREE_DELIVERY_FROM) + '-ზე მეტი შეკვეთა — უფასო.</span></div>' +
             '<div class="card meta-item">🛡️ <span><b>გარანტია:</b> ორიგინალი პროდუქტი და 12 თვის გარანტია.</span></div>' +
             '<div class="card meta-item">💳 <span><b>გადახდა:</b> ნაღდი კურიერთან ან საბანკო გადარიცხვა.</span></div>' +
             (p.specs && p.specs.length ? '<div class="card meta-item">⚙️ <span><b>მახასიათებლები:</b> ' + p.specs.map(esc).join(' · ') + '</span></div>' : '') +
@@ -248,7 +248,7 @@ const Views = {
           '</div>' +
           '<h3 style="font-size:16px;font-weight:800;margin:22px 0 12px">მიწოდება</h3>' +
           '<label class="pay-option"><input type="radio" name="delivery" value="courier" checked> კურიერი — მისამართზე მიტანა (' + money(DELIVERY_FEE) + ', ' + money(FREE_DELIVERY_FROM) + '-ზე მეტზე უფასო)</label>' +
-          '<label class="pay-option"><input type="radio" name="delivery" value="pickup"> თვითგატანა პუნქტიდან — უფასო</label>' +
+          '<label class="pay-option"><input type="radio" name="delivery" value="pickup"> მეტროსთან მიტანა — უფასო (შეკვეთიდან 1–2 კვირაში)</label>' +
           '<h3 style="font-size:16px;font-weight:800;margin:22px 0 12px">გადახდა</h3>' +
           '<label class="pay-option"><input type="radio" name="payment" value="cash" checked> ნაღდი ანგარიშსწორება კურიერთან</label>' +
           '<label class="pay-option"><input type="radio" name="payment" value="transfer"> საბანკო გადარიცხვა</label>' +
@@ -306,7 +306,7 @@ const Views = {
           '<div class="meta-list">' +
             '<div class="card meta-item">📍 <span>' + esc(order.customer.city) + ', ' + esc(order.customer.address) + '</span></div>' +
             '<div class="card meta-item">📞 <span>' + esc(order.customer.phone) + '</span></div>' +
-            '<div class="card meta-item">🚚 <span>' + (order.deliveryMethod === 'pickup' ? 'თვითგატანა პუნქტიდან' : 'კურიერი მისამართზე') + '</span></div>' +
+            '<div class="card meta-item">🚚 <span>' + (order.deliveryMethod === 'pickup' ? 'მიტანა მეტროსთან' : 'კურიერი მისამართზე') + '</span></div>' +
             '<div class="card meta-item">💳 <span>' + (order.payment === 'transfer' ? 'საბანკო გადარიცხვა' : 'ნაღდი კურიერთან') + '</span></div>' +
           '</div>' +
           '<a class="btn btn-ghost btn-block" style="margin-top:16px" href="#/catalog">კიდევ ვიყიდო</a>' +
@@ -337,7 +337,7 @@ const Views = {
 
   contact() {
     const FAQ = [
-      { q: 'როგორ ხდება მიწოდება?', a: 'კურიერით მთელი საქართველოს მასშტაბით, 1–3 სამუშაო დღეში. ' + money(FREE_DELIVERY_FROM) + '-ზე მეტი შეკვეთა — უფასო მიწოდება.' },
+      { q: 'როგორ ხდება მიწოდება?', a: 'მიტანა ხდება ნებისმიერ მეტროსთან, შეკვეთიდან 1–2 კვირაში. ' + money(FREE_DELIVERY_FROM) + '-ზე მეტი შეკვეთა — უფასო მიწოდება.' },
       { q: 'როგორ ვიხდი?', a: 'ნაღდი ანგარიშსწორება კურიერთან ან საბანკო გადარიცხვა შეკვეთის დადასტურების შემდეგ.' },
       { q: 'პროდუქტი ორიგინალია?', a: 'დიახ, ვმუშაობთ მხოლოდ სანდო მომწოდებლებთან და ვიძლევით 12 თვის გარანტიას.' },
       { q: 'შემიძლია შეკვეთის გაუქმება?', a: 'დიახ, სანამ შეკვეთა გზაში გავა — მოგვწერე TikTok-ზე (@luksshop_official) ან დაგვირეკე.' }

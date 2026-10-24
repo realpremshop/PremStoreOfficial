@@ -175,7 +175,7 @@ function submitCheckout(form) {
   if (bad) { setErr('errForm', 'შეავსე მონიშნული ველები'); return; }
 
   const order = createOrder({
-    customer: { name, phone, email, city, address: delivery === 'pickup' ? 'თვითგატანა' : address, note },
+    customer: { name, phone, email, city, address: delivery === 'pickup' ? 'მეტროსთან მიტანა' : address, note },
     deliveryMethod: delivery,
     payment
   });
@@ -245,8 +245,8 @@ function chatAnswer(text) {
   }
 
   if (/მიწოდ|კურიერ|ჩამოტან/.test(t)) {
-    return 'მიწოდება მთელ საქართველოში 1–3 სამუშაო დღეში, ' + money(DELIVERY_FEE) +
-      '. ' + money(FREE_DELIVERY_FROM) + '-ზე მეტი შეკვეთა — უფასო. შესაძლებელია თვითგატანაც.';
+    return 'მიტანა ნებისმიერ მეტროსთან, შეკვეთიდან 1–2 კვირაში, ' + money(DELIVERY_FEE) +
+      '. ' + money(FREE_DELIVERY_FROM) + '-ზე მეტი შეკვეთა — უფასო.';
   }
   if (/გადახდ|ფას|ფასი/.test(t)) {
     return 'გადახდა შესაძლებელია ნაღდი ანგარიშსწორებით კურიერთან ან საბანკო გადარიცხვით. ფასები კატალოგშია მითითებული.';
